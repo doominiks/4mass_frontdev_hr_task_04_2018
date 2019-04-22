@@ -1,5 +1,17 @@
 :host{
   .main-wrapper{
-    width:80%;
+    display: flex;
+    justify-content: center;
+    width:600px;
+  }
+  .mat-table{
+    width: 100%;
+    box-shadow: 0 0 15px 5px rgba(0,0,0,0.15);
+  }
+  .mat-header-cell{
+    font-size: 1.1em;
+  }
+  .mat-cell{
+    margin: 5px 0;
   }
 }

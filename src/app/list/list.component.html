@@ -1,9 +1,26 @@
 <div class="main-wrapper">
-  <div *ngFor="let item of planetsList" fxLayout="row" fxLayoutGap="10px">
-     <div>{{item.name}}</div>
-     <div>{{item.climate}}</div>
-     <div>{{item.terrain}}</div>
-     <div>{{item.diameter}}</div>
-     <div>{{item.gravity}}</div>
-  </div>
+  <mat-table [dataSource]="planetsList">
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <mat-cell *matCellDef="let item"> {{item.name}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="climate">
+    <mat-header-cell *matHeaderCellDef> Climate </mat-header-cell>
+    <mat-cell *matCellDef="let item"> {{item.climate}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="terrain">
+    <mat-header-cell *matHeaderCellDef> Terrain </mat-header-cell>
+    <mat-cell *matCellDef="let item"> {{item.terrain}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="diameter">
+    <mat-header-cell *matHeaderCellDef> Diameter </mat-header-cell>
+    <mat-cell *matCellDef="let item"> {{item.diameter}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="gravity">
+    <mat-header-cell *matHeaderCellDef> Gravity </mat-header-cell>
+    <mat-cell *matCellDef="let item"> {{item.gravity}} </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
 </div>
