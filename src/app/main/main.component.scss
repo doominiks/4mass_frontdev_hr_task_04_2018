@@ -6,16 +6,25 @@
     max-width: 100vw;
     padding-top:40px;
     margin:auto;
-    .list-container{
-      min-width: 300px;
-      min-height: 300px;
-      border-radius:5px;
-      border: 1px solid #696969;
+    .mat-form-field{
+      width: 350px;
     }
-    mat-form-field{
-      max-width: 300px;
+    .mat-input-element {
+      width: 350px;
+      height: 30px;
+      background: #FFFFFF;
+      border-radius: 15px;
+      padding: 0 15px;
+      &:focus{
+        box-shadow: 0 0 15px 5px rgba(0,0,0,0.15);
+      }
+    }
+    .search-icon{
+      fill: #ca1193;
     }
   }
 
 }
-
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
