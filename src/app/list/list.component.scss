@@ -1,5 +1,70 @@
-:host{
-  .main-wrapper{
-    width:80%;
+:host {
+
+  .table {
+    border-radius: 20%;
+    border-collapse: separate;
+    border-radius: 6px;
+    width: 560px;
+    margin: 0 auto;
+
+    &__header {
+      background-color: #6c7ae0;
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      text-align: center;
+      padding: 0;
+    }
+
+    &__cell {
+      color: #808080;
+      text-align: center;
+      padding: 3px 10px 3px 10px;
+    }
+
+    &__row:nth-child(2n) {
+      background-color: #e0ebfc;
+    }
+
+    &__row:hover>.table__cell {
+      background-color: blue;
+      cursor: pointer;
+      color: white;
+    }
+
+    &__cell--climate {
+      width: 20%;
+    }
+
+    &__cell--name {
+      width: 13%;
+    }
+
+    &__cell--terrain {
+      width: 27%;
+    }
+
+    &__cell--diameter {
+      width: 15%;
+    }
+
+    &__cell--gravity {
+      width: 25%;
+    }
+  }
+
+  @media (max-width: 570px) {
+    .table {
+      width: 320px;
+
+      &__header {
+        font-size: 0.9rem;
+      }
+
+      &__cell {
+        padding: 2px;
+      }
+
+    }
   }
 }

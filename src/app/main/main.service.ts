@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Planet, dummyData } from '../dummy';
 
-interface Item{
-  id:string;
+interface Item {
+  id: string;
 }
 
 @Injectable({
@@ -13,10 +13,10 @@ export class MainService {
 
   public list: Planet[];
 
-constructor() {
-  this.list = dummyData.results;
+  constructor() {
+    this.list = dummyData.results;
 
-}
+  }
 
 
 

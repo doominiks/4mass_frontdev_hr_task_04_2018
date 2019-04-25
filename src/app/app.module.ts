@@ -1,52 +1,55 @@
 import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule  } from '@angular/platform-browser/animations';
-import { MatIconModule, MatInputModule, MatIconRegistry} from '@angular/material'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule, MatInputModule, MatIconRegistry, MatFormFieldModule, MatTableModule } from '@angular/material'
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatFormFieldModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component'
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ListComponent } from './list/list.component';
 
+
 const routes: Routes = [
   {
     path: "**",
-    redirectTo:'main',
+    redirectTo: 'main',
 
   },
   {
     path: "main",
-    component:MainComponent,
+    component: MainComponent,
   }
 ];
 @NgModule({
-   declarations: [
-      AppComponent,
-      MainComponent,
-      ListComponent
-   ],
-   imports: [
-      BrowserModule,
-      BrowserAnimationsModule,
-      HttpClientModule,
+  declarations: [
+    AppComponent,
+    MainComponent,
+    ListComponent
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
 
-      //Angular Material Modules
-      MatFormFieldModule,
-      MatIconModule,
-      MatInputModule,
+    //Angular Material Modules
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatTableModule,
 
-      //Angular Flex
-      FlexLayoutModule,
 
-      RouterModule.forRoot(routes)
-   ],
-   providers: [],
-   bootstrap: [
-      AppComponent,
 
-   ]
+    //Angular Flex
+    FlexLayoutModule,
+
+    RouterModule.forRoot(routes)
+  ],
+  providers: [],
+  bootstrap: [
+    AppComponent,
+
+  ]
 })
 export class AppModule {
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
