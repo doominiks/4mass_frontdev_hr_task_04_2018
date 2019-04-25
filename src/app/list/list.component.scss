@@ -1,5 +1,116 @@
-:host{
-  .main-wrapper{
-    width:80%;
+:host {
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 80vw;
+
+    .message {
+      padding: 1rem;
+      font-size: 1.25rem;
+      text-align: center;
+      background-color: rgb(240, 239, 240);
+
+      @media (min-width: 500px) {
+        font-size: 1.5rem;
+      }
+    }
+
+    &__head {
+      display: none;
+    }
+
+    &__item {
+      padding: 1rem;
+
+      &__mobile-header {
+        font-weight: 500;
+        float: left;
+        padding-right: 2rem;
+      }
+
+      &__content {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      &__name,
+      &__climate,
+      &__terrain,
+      &__diameter,
+      &__gravity {
+        padding: 0.5rem;
+        text-align: right;
+      }
+    }
+
+    &__item:nth-of-type(even) {
+      background-color: rgb(240, 239, 240);
+    }
+
+    &__item:nth-of-type(odd) {
+      background-color: rgb(249, 249, 249);
+    }
+  }
+
+  @media (min-width: 850px) {
+    .list {
+      width: 800px;
+
+      &__head {
+        font-weight: 500;
+        background-color: rgb(163, 197, 208);
+      }
+
+      &__item:hover {
+        background-color: rgb(204, 203, 204);
+      }
+
+      &__head,
+      &__item {
+        display: flex;
+        flex-direction: row;
+        padding: 1rem;
+        align-items: center;
+
+        &__mobile-header {
+          display: none;
+        }
+
+        &__content {
+          display: flex;
+          justify-content: flex-start;
+        }
+
+        &__name {
+          flex: 1;
+          text-align: left;
+          padding: 0;
+        }
+
+        &__climate {
+          flex: 1;
+          text-align: left;
+          padding: 0;
+        }
+        &__terrain {
+          flex: 1.25;
+          text-align: left;
+          padding: 0 2rem;
+        }
+
+        &__diameter {
+          flex: 0.75;
+          text-align: left;
+          padding: 0;
+        }
+
+        &__gravity {
+          flex: 1;
+          text-align: left;
+          padding: 0;
+        }
+      }
+    }
   }
 }

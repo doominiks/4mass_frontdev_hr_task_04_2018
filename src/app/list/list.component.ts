@@ -7,10 +7,8 @@ import { Planet } from '../dummy';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-@Input() planetsList: Planet[] = [];
-  constructor() { }
+  @Input() planetsList: Planet[] = [];
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
