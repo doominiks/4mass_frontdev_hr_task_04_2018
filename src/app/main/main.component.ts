@@ -8,16 +8,19 @@ import { Planet } from '../dummy';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  public list:Planet[] = [];
+  public list: Planet[] = [];
+  public showPlanet: Planet[] = [];
 
   constructor(private _service: MainService) { }
 
   ngOnInit() {
-   this.list = this._service.list;
+    this.list = this._service.list;
+    this.showPlanet = this._service.list;
   }
 
-onSearchValueChanges(inputElement:HTMLInputElement){
-
-}
-
+  onSearchValueChanges(inputElement: HTMLInputElement) {
+    this.showPlanet = this.list.filter(el => {
+      return el.name.toLowerCase().indexOf(inputElement.value.toLowerCase()) > -1;
+    });
+  }
 }

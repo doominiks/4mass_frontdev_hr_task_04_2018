@@ -7,7 +7,9 @@ import { Planet } from '../dummy';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-@Input() planetsList: Planet[] = [];
+  @Input() planetsList: Planet[] = [];
+
+  displayedColumns: string[] = ['name', 'climate', 'terrain', 'diameter', 'gravity'];
   constructor() { }
 
   ngOnInit() {
